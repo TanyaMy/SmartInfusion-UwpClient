@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
+﻿using Autofac;
+using SmartInfusion_UwpClient.Business.Services;
+using SmartInfusion_UwpClient.Infrastructure;
+using SmartInfusion_UwpClient.Presentation.Views.LoginPage;
+using SmartInfusion_UwpClient.Presentation.Views.MenuPage;
+using System;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 namespace SmartInfusion_UwpClient
@@ -31,6 +26,15 @@ namespace SmartInfusion_UwpClient
             this.InitializeComponent();
             this.Suspending += OnSuspending;
         }
+
+        static App()
+        {
+            var builder = new ContainerBuilder();
+            AutofacRegistrator.RegisterTypes(builder);
+            Container = builder.Build();
+        }
+
+        public static IContainer Container { get; }
 
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points
@@ -66,9 +70,14 @@ namespace SmartInfusion_UwpClient
                     // When the navigation stack isn't restored navigate to the first page,
                     // configuring the new page by passing required information as a navigation
                     // parameter
-                    rootFrame.Navigate(typeof(MainPage), e.Arguments);
+                    var prefService = Container.Resolve<IPreferencesService>();
+                    bool isLogged = prefService.IsLoggedIn;
+                    Type initialPage = isLogged ? typeof(MenuContentPage) : typeof(LoginPage);
+                    rootFrame.Navigate(initialPage, e.Arguments);
                 }
                 // Ensure the current window is active
+                var titleTextBlock = new TextBlock { Text = "Smart Infusion" };
+                Window.Current.SetTitleBar(titleTextBlock);
                 Window.Current.Activate();
             }
         }
