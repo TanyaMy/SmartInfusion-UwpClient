@@ -27,11 +27,13 @@ namespace SmartInfusion_UwpClient.Infrastructure
             builder.RegisterType<PreferencesService>().As<IPreferencesService>();
             builder.RegisterType<AuthenticationService>().As<IAuthenticationService>();
             builder.RegisterType<NetworkService>().As<INetworkService>();
+            builder.RegisterType<DiseaseHistoryService>().As<INetworkService>();
         }
 
         private static void RegisterApis(ContainerBuilder builder)
         {
             builder.RegisterType<AuthRestApi>().As<IAuthRestApi>();
+            builder.RegisterType<DiseaseHistoryRestApi>().As<IDiseaseHistoryRestApi>();
         }
     }
 }

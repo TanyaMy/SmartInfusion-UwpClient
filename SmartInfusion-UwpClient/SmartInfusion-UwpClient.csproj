@@ -96,7 +96,9 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Business\Services\IAuthenticationService.cs" />
+    <Compile Include="Business\Services\IDiseaseHistoryService.cs" />
     <Compile Include="Business\Services\Implementations\AuthenticationService.cs" />
+    <Compile Include="Business\Services\Implementations\DiseaseHistoryService.cs" />
     <Compile Include="Business\Services\Implementations\NetworkService.cs" />
     <Compile Include="Business\Services\Implementations\PreferencesService.cs" />
     <Compile Include="Business\Services\INetworkService.cs" />
@@ -104,7 +106,9 @@
     <Compile Include="Data\Api\ApiException.cs" />
     <Compile Include="Data\Api\ApiRouting.cs" />
     <Compile Include="Data\Api\APIs\IAuthRestApi.cs" />
+    <Compile Include="Data\Api\APIs\IDiseaseHistoryRestApi.cs" />
     <Compile Include="Data\Api\APIs\Implementations\AuthRestApi.cs" />
+    <Compile Include="Data\Api\APIs\Implementations\DiseaseHistoryRestApi.cs" />
     <Compile Include="Data\Api\Rest\IRequestInterceptor.cs" />
     <Compile Include="Data\Api\Rest\PostFormUrlEncodedRequestBuilder.cs" />
     <Compile Include="Data\Api\Rest\Request.cs" />
@@ -113,7 +117,17 @@
     <Compile Include="Data\Api\Rest\UrlRequestBuilder.cs" />
     <Compile Include="Data\Entities\Base\BaseEntity.cs" />
     <Compile Include="Data\Entities\Base\IBaseEntity.cs" />
+    <Compile Include="Data\Entities\DiseaseHistory\DiseaseHistoryDetailsModel.cs" />
+    <Compile Include="Data\Entities\DiseaseHistory\DiseaseHistoryListItemModel.cs" />
+    <Compile Include="Data\Entities\DiseaseHistory\DiseaseHistoryListModel.cs" />
     <Compile Include="Data\Entities\Identity\AppUser.cs" />
+    <Compile Include="Data\Entities\Medicine\MedicineListItemViewModel.cs" />
+    <Compile Include="Data\Entities\Medicine\MedicineListViewModel.cs" />
+    <Compile Include="Data\Entities\Metric\MetricListItemViewModel.cs" />
+    <Compile Include="Data\Entities\Metric\MetricListViewModel.cs" />
+    <Compile Include="Data\Entities\Treatment\EditTreatmentViewModel.cs" />
+    <Compile Include="Data\Entities\Treatment\TreatmentListItemViewModel.cs" />
+    <Compile Include="Data\Entities\Treatment\TreatmentListViewModel.cs" />
     <Compile Include="Data\Entities\UserInfo.cs" />
     <Compile Include="Infrastructure\AutofacRegistrator.cs" />
     <Compile Include="Presentation\Constants\RolesConstants.cs" />
@@ -204,7 +218,9 @@
       <Version>7.4.0</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Presentation\Views\MenuPage\DiseaseHistory\" />
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
