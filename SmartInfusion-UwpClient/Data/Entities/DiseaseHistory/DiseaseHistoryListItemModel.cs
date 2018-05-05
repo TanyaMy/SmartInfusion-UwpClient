@@ -11,5 +11,11 @@
         public string FirstName { get; set; }
 
         public string SecondName { get; set; }
+
+        public string FullName
+        {
+            get => string.Concat(FirstName, " ", SecondName);
+        }
+
     }
 }

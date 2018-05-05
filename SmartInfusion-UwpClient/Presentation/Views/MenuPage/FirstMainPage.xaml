@@ -10,9 +10,9 @@
     <Grid HorizontalAlignment="Stretch" 
           VerticalAlignment="Stretch">
         <Grid.RowDefinitions>
-            <RowDefinition Height="2*"/>
+            <RowDefinition Height="3*"/>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.9*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
@@ -39,51 +39,51 @@
                        Source="/Assets/logo.png" />            
             <TextBlock Text="Smart" 
                        Foreground="Black"
-                       FontSize="24"
+                       FontSize="28"
                        FontWeight="Bold"/>
             <TextBlock Text="Infusion" 
                        Foreground="Black"
-                       FontSize="28"
+                       FontSize="24"
                        FontWeight="Bold"/>           
         </StackPanel>
 
         <RelativePanel VerticalAlignment="Center"
                     HorizontalAlignment="Center"
-                    Padding="5"
-                    Margin="5"
+                    Padding="30"
+                    Height="200"
+                    MaxWidth="250"
+                    Margin="0, 30, 0, 0"
                     Grid.Row="1"
                     Grid.Column="0">
             <Image Stretch="Fill"
                        Opacity="1"
-                       Width="100"
-                       Height="100"
-                       Source="/Assets/iconHeart.png" />
+                       Source="/Assets/speed.png" />
         </RelativePanel>
 
         <RelativePanel VerticalAlignment="Center"
                     HorizontalAlignment="Center"
-                    Padding="5"
-                    Margin="5"
+                    Padding="30"
+                    Height="200"
+                    MaxWidth="250"
+                    Margin="0, 30, 0, 0"
                     Grid.Row="1"
                     Grid.Column="1">
             <Image Stretch="Fill"
                        Opacity="1"
-                       Width="100"
-                       Height="100"
-                       Source="/Assets/iconConditions.png" />
+                       Source="/Assets/electronic.png" />
         </RelativePanel>
 
         <RelativePanel VerticalAlignment="Center"
                     HorizontalAlignment="Center"
-                    Padding="5"
-                    Margin="5"
+                     Padding="30"
+                    Height="200"
+                    MaxWidth="250"
+                    Margin="0, 30, 0, 0"
                     Grid.Row="1"
                     Grid.Column="2">
             <Image Stretch="Fill"
                        Opacity="1"
-                       Width="100"
-                       Height="100"
-                       Source="/Assets/iconTrack.png" />
+                       Source="/Assets/monitoring.png" />
         </RelativePanel>
 
 
@@ -98,7 +98,7 @@
                        TextAlignment="Center"
                        TextWrapping="Wrap"
                        Padding="10">
-                <Bold>Work with all kinds of transplant organs</Bold>
+                <Bold>High accuracy of injection speed</Bold>
             </TextBlock>
         </RelativePanel>
 
@@ -113,7 +113,7 @@
                        TextAlignment="Center"
                        TextWrapping="Wrap"
                        Padding="10">
-                <Bold>Track the conditions of organs keeping</Bold>
+                <Bold>Electronic record keeping</Bold>
             </TextBlock>
         </RelativePanel>
 
@@ -128,7 +128,7 @@
                        TextAlignment="Center"
                        TextWrapping="Wrap"
                        Padding="10">
-                <Bold>Follow organs transportation any time</Bold>
+                <Bold>Monitoring the patient's treatment</Bold>
             </TextBlock>
         </RelativePanel>
     </Grid>

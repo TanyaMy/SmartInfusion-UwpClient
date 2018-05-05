@@ -37,7 +37,7 @@ namespace SmartInfusion_UwpClient.Business.Services.Implementations
                 LastUpdateIpTime = DateTime.Now;
                 return true;
             }
-            catch (ApiException ex)
+            catch (ApiException)
             {
                 errorMessage = "Unauthorized";
             }

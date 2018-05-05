@@ -21,7 +21,9 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel x:Name="LoginStackPanel" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="150,0,150,50">
-            <Image Stretch="None"
+            <Image Stretch="Fill"
+                   MaxWidth="200"
+                   Margin="10"
                    Opacity="1" 
                    Source="/Assets/logo.png"
                    HorizontalAlignment="Center"

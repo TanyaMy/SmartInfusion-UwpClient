@@ -2,11 +2,11 @@
 
 // The User Control item template is documented at https://go.microsoft.com/fwlink/?LinkId=234236
 
-namespace SmartInfusion_UwpClient.Presentation.Views
+namespace SmartInfusion_UwpClient.Presentation.Views.MenuPage.Medicine
 {
-    public sealed partial class PreloaderContent : UserControl
+    public sealed partial class MedicineNotSelected : UserControl
     {
-        public PreloaderContent()
+        public MedicineNotSelected()
         {
             this.InitializeComponent();
         }

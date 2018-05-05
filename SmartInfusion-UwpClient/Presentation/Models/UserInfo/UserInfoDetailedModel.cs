@@ -24,5 +24,13 @@ namespace SmartInfusion_UwpClient.Presentation.Models.UserInfo
         public string City { get; set; }
 
         public string PhoneNumber { get; set; }
+
+        public double Weight { get; set; }
+
+        public string FullName
+        {
+            get => String.Concat(FirstName, " ", SecondName);
+        }
+
     }
 }

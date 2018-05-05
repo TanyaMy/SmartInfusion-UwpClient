@@ -1,0 +1,44 @@
+﻿<Page
+    x:Class="SmartInfusion_UwpClient.Presentation.Views.MenuPage.Medicine.MedicineListPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SmartInfusion_UwpClient.Presentation.Views.MenuPage.Medicine"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:views="using:SmartInfusion_UwpClient.Presentation.Views"
+    mc:Ignorable="d">
+
+
+    <Page.Resources>
+        <DataTemplate x:Key="MedicineDetailsTemplate">
+            <local:MedicineDetailsControl></local:MedicineDetailsControl>
+        </DataTemplate>
+
+        <DataTemplate x:Key="MedicineListItemTemplate">
+            <local:MedicineListItemControl></local:MedicineListItemControl>
+        </DataTemplate>
+
+        <DataTemplate x:Key="MedicineNotSelectedTemplate">
+            <local:MedicineNotSelected></local:MedicineNotSelected>
+        </DataTemplate>
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <controls:MasterDetailsView x:Name="MedicinesMasterDetails" 
+                                    ItemTemplate="{StaticResource MedicineListItemTemplate}"
+                                    DetailsTemplate="{StaticResource MedicineDetailsTemplate}" 
+                                    NoSelectionContentTemplate="{StaticResource MedicineNotSelectedTemplate}"/>
+
+        <controls:Loading x:Name="Preloader" 
+                          HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                          HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+            <views:PreloaderContent></views:PreloaderContent>
+        </controls:Loading>
+    </Grid>
+</Page>
+
+
+
+
+

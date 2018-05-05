@@ -4,6 +4,8 @@ using SmartInfusion_UwpClient.Business.Services.Implementations;
 using SmartInfusion_UwpClient.Data.Api.APIs;
 using SmartInfusion_UwpClient.Data.Api.APIs.Implementations;
 using SmartInfusion_UwpClient.Presentation.ViewModels;
+using SmartInfusion_UwpClient.Presentation.ViewModels.DiseaseHistory;
+using SmartInfusion_UwpClient.Presentation.ViewModels.Medicine;
 
 namespace SmartInfusion_UwpClient.Infrastructure
 {
@@ -20,6 +22,8 @@ namespace SmartInfusion_UwpClient.Infrastructure
         {
             builder.RegisterType<MenuContentViewModel>().AsSelf().AsImplementedInterfaces();
             builder.RegisterType<LoginViewModel>().AsSelf().AsImplementedInterfaces();
+            builder.RegisterType<MedicineListViewModel>().AsSelf().AsImplementedInterfaces();
+            builder.RegisterType<DiseaseHistoryListViewModel>().AsSelf().AsImplementedInterfaces();
         }
 
         private static void RegisterServices(ContainerBuilder builder)
@@ -27,13 +31,15 @@ namespace SmartInfusion_UwpClient.Infrastructure
             builder.RegisterType<PreferencesService>().As<IPreferencesService>();
             builder.RegisterType<AuthenticationService>().As<IAuthenticationService>();
             builder.RegisterType<NetworkService>().As<INetworkService>();
-            builder.RegisterType<DiseaseHistoryService>().As<INetworkService>();
+            builder.RegisterType<DiseaseHistoryService>().As<IDiseaseHistoryService>();
+            builder.RegisterType<MedicineService>().As<IMedicineService>();
         }
 
         private static void RegisterApis(ContainerBuilder builder)
         {
             builder.RegisterType<AuthRestApi>().As<IAuthRestApi>();
             builder.RegisterType<DiseaseHistoryRestApi>().As<IDiseaseHistoryRestApi>();
+            builder.RegisterType<MedicineRestApi>().As<IMedicineRestApi>();
         }
     }
 }

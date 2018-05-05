@@ -17,5 +17,6 @@ namespace SmartInfusion_UwpClient.Data.Entities.DiseaseHistory
         public List<MetricListItemViewModel> Metrics { get; set; }
 
         public List<TreatmentListItemViewModel> Treatments { get; set; }
+
     }
 }

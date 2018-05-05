@@ -13,5 +13,11 @@ namespace SmartInfusion_UwpClient.Data.Entities.Metric
         public int DiseaseHistoryId { get; set; }
 
         public DateTime Created { get; set; }
+
+        public string DisplayName
+        {
+            get => Name + ":";
+        }
+
     }
 }

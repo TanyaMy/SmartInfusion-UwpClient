@@ -1,0 +1,262 @@
+﻿<UserControl
+    x:Class="SmartInfusion_UwpClient.Presentation.Views.MenuPage.DiseaseHistory.DiseaseHistoryDetailsControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SmartInfusion_UwpClient.Presentation.Views.MenuPage.DiseaseHistory"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:views="using:SmartInfusion_UwpClient.Presentation.Views"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <Grid Background="#F1F1FA">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <RelativePanel Grid.Row="0"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center">
+            <TextBlock HorizontalAlignment="Center"
+                   Padding="30, 50, 30, 0"
+                   FontSize="32"
+                   Foreground="CadetBlue"> 
+                    Disease History Details
+            </TextBlock>
+        </RelativePanel>
+
+        <RelativePanel Grid.Row="1"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center">
+            <controls:ImageEx x:Name="PatientImage"
+                Width="150"
+                Stretch="Uniform"
+                Source="Assets/patientDetails.png">
+            </controls:ImageEx>
+        </RelativePanel>
+
+        <ScrollViewer HorizontalAlignment="Stretch"
+                      VerticalAlignment="Stretch"
+                      Grid.Row="2"
+                      HorizontalScrollBarVisibility="Hidden" 
+                      VerticalScrollBarVisibility="Hidden">
+            <StackPanel>
+                <StackPanel Orientation="Vertical"
+                            Padding="20"
+                            Margin="20"
+                            Background="AliceBlue"
+                            CornerRadius="20"
+                            BorderThickness="1"
+                            BorderBrush="Aquamarine">
+
+                    <StackPanel Padding="10">
+                        <TextBlock FontSize="24"
+                                   HorizontalAlignment="Center"
+                                   FontWeight="Bold"
+                                   Foreground="DarkBlue"
+                                   Padding="0,0,5,0">Patient Information</TextBlock>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Padding="10">
+                        <TextBlock FontSize="18"
+                                   FontWeight="Bold"
+                                   Padding="0,0,5,0">Patient:</TextBlock>
+                        <TextBlock Text="{Binding Details.PatientInfo.FullName}"
+                                   FontSize="18"
+                                   FontStyle="Italic"></TextBlock>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Padding="10">
+                        <TextBlock FontSize="18"
+                                   FontWeight="Bold"
+                                   Padding="0,0,5,0">Email:</TextBlock>
+                        <TextBlock Text="{Binding Details.PatientInfo.Email}"
+                                   FontSize="18"
+                                   FontStyle="Italic"></TextBlock>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Padding="10">
+                        <TextBlock FontSize="18"
+                                   FontWeight="Bold"
+                                   Padding="0,0,5,0">Phone Number:</TextBlock>
+                        <TextBlock Text="{Binding Details.PatientInfo.PhoneNumber}"
+                                   FontSize="18"
+                                   FontStyle="Italic"></TextBlock>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Padding="10">
+                        <TextBlock FontSize="18"
+                                   FontWeight="Bold"
+                                   Padding="0,0,5,0">Country:</TextBlock>
+                        <TextBlock Text="{Binding Details.PatientInfo.Country}"
+                                   FontSize="18"
+                                   FontStyle="Italic"></TextBlock>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Padding="10">
+                        <TextBlock FontSize="18"
+                                   FontWeight="Bold"
+                                   Padding="0,0,5,0">City:</TextBlock>
+                        <TextBlock Text="{Binding Details.PatientInfo.City}"
+                                   FontSize="18"
+                                   FontStyle="Italic"></TextBlock>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Padding="10">
+                        <TextBlock FontSize="18"
+                                   FontWeight="Bold"
+                                   Padding="0,0,5,0">Address:</TextBlock>
+                        <TextBlock Text="{Binding Details.PatientInfo.AddressLine1}"
+                                   FontSize="18"
+                                   FontStyle="Italic"></TextBlock>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Padding="10">
+                        <TextBlock FontSize="18"
+                                   FontWeight="Bold"
+                                   Padding="0,0,5,0">Weight:</TextBlock>
+                        <TextBlock Text="{Binding Details.PatientInfo.Weight}"
+                                   FontSize="18"
+                                   FontStyle="Italic"></TextBlock>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Padding="10">
+                        <TextBlock FontSize="18"
+                                   FontWeight="Bold"
+                                   Padding="0,0,5,0">Message:</TextBlock>
+                        <TextBlock Text="{Binding Details.Message}"
+                                   FontSize="18"
+                                   FontStyle="Italic"></TextBlock>
+                    </StackPanel>
+                </StackPanel>
+
+                <TextBlock HorizontalAlignment="Center"
+                           FontSize="24"
+                           FontWeight="Bold"
+                           Foreground="Green"
+                           Margin="10">
+                    Patient Metrics
+                </TextBlock>                
+                <ListView ItemsSource="{Binding Details.Metrics}" 
+                          SelectionMode="Single"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center">
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="10"                                        
+                                        Padding="10"
+                                        Background="LightYellow"
+                                        CornerRadius="10"
+                                        BorderThickness="1"
+                                        BorderBrush="DarkGreen">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock FontSize="16"
+                                   FontWeight="Bold"
+                                   Padding="0,0,5,0" Text="{Binding DisplayName}"></TextBlock>
+                                    <TextBlock FontSize="16"
+                                   Padding="0,0,5,0" Text="{Binding Value}"/>                                   
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">                                  
+                                    <TextBlock FontSize="16"
+                                       FontWeight="Bold"
+                                       Padding="0,0,5,0">Created:</TextBlock>
+                                    <TextBlock FontSize="16"
+                                       Padding="0,0,5,0"
+                                       Text="{Binding Created.Date}"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+
+                <TextBlock HorizontalAlignment="Center"
+                           FontSize="24"
+                           FontWeight="Bold"
+                           Foreground="DarkRed"
+                           Margin="10">
+                    Patient Treatments
+                </TextBlock>
+                <ListView ItemsSource="{Binding Details.Treatments}" 
+                          SelectionMode="Single"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center">
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="10"                                        
+                                        Padding="10"
+                                        Background="LightGray"
+                                        CornerRadius="10"
+                                        BorderThickness="1"
+                                        BorderBrush="DarkRed">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock FontSize="16"
+                                   FontWeight="Bold"
+                                   Padding="0,0,5,0">Medicine:</TextBlock>
+                                    <TextBlock FontSize="16"
+                                   Padding="0,0,5,0" Text="{Binding MedicineTitle}"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock FontSize="16"
+                                   FontWeight="Bold"
+                                   Padding="0,0,5,0">Diagnosis:</TextBlock>
+                                    <TextBlock FontSize="16"
+                                   Padding="0,0,5,0" Text="{Binding Diagnosis}"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock FontSize="16"
+                                   FontWeight="Bold"
+                                   Padding="0,0,5,0">Medicine Weight:</TextBlock>
+                                    <TextBlock FontSize="16"
+                                   Padding="0,0,5,0" Text="{Binding MedicineWeight}"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock FontSize="16"
+                                   FontWeight="Bold"
+                                   Padding="0,0,5,0">Solution Volume:</TextBlock>
+                                    <TextBlock FontSize="16"
+                                   Padding="0,0,5,0" Text="{Binding SolutionVolume}"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock FontSize="16"
+                                   FontWeight="Bold"
+                                   Padding="0,0,5,0">Dosage:</TextBlock>
+                                    <TextBlock FontSize="16"
+                                   Padding="0,0,5,0" Text="{Binding Dosage}"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock FontSize="16"
+                                   FontWeight="Bold"
+                                   Padding="0,0,5,0">Completed:</TextBlock>
+                                    <FontIcon FontFamily="Segoe MDL2 Assets" 
+                                        Glyph="{Binding CompletedIcon}"
+                                        FontSize="24" 
+                                        Margin="3,10,10,10"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+
+
+
+            </StackPanel>
+            
+        </ScrollViewer>
+        
+        <controls:Loading x:Name="Preloader" IsLoading="{Binding IsBusy}"
+                              HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                              HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"
+                              Grid.RowSpan="3">
+            <views:PreloaderContent></views:PreloaderContent>
+        </controls:Loading>
+    </Grid>
+</UserControl>
+

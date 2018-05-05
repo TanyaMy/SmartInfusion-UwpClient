@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Linq;
-using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using ReactiveUI;
 using SmartInfusion_UwpClient.Business.Services;
-using SmartInfusion_UwpClient.Presentation.Constants;
 using SmartInfusion_UwpClient.Presentation.Views.LoginPage;
 using SmartInfusion_UwpClient.Presentation.Views.MenuPage;
+using SmartInfusion_UwpClient.Presentation.Constants;
+using SmartInfusion_UwpClient.Presentation.Views.MenuPage.DiseaseHistory;
+using SmartInfusion_UwpClient.Presentation.Views.MenuPage.Medicine;
 
 namespace SmartInfusion_UwpClient.Presentation.ViewModels
 {
@@ -80,6 +81,38 @@ namespace SmartInfusion_UwpClient.Presentation.ViewModels
                 Icon = "\xE80F",
                 PageType = typeof(FirstMainPage)
             });
+
+            if (userRole == RolesConstants.Doctor
+                || userRole == RolesConstants.Administrator
+                || userRole == RolesConstants.Nurse)
+            {
+                MenuItems.Add(new MenuItemViewModel
+                {
+                    Icon = "\xEE94",
+                    DisplayName = "Medicines",
+                    PageType = typeof(MedicineListPage)
+                });
+            };
+
+            if (userRole == RolesConstants.Doctor 
+                || userRole == RolesConstants.Nurse)
+            {
+                MenuItems.Add(new MenuItemViewModel
+                {
+                    Icon = "\xE779",
+                    DisplayName = "Disease Histories",
+                    PageType = typeof(DiseaseHistoryListPage)
+                });
+            }
+            else if (userRole == RolesConstants.Patient)
+            {
+                MenuItems.Add(new MenuItemViewModel
+                {
+                    DisplayName = "My Disease Histories",
+                    Icon = "\xE133",
+                    PageType = typeof(DiseaseHistoryListPage)
+                });
+            }
 
             MenuItems.Add(new MenuItemViewModel
             {

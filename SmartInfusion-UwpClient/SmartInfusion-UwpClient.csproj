@@ -97,8 +97,10 @@
     </Compile>
     <Compile Include="Business\Services\IAuthenticationService.cs" />
     <Compile Include="Business\Services\IDiseaseHistoryService.cs" />
+    <Compile Include="Business\Services\IMedicineService.cs" />
     <Compile Include="Business\Services\Implementations\AuthenticationService.cs" />
     <Compile Include="Business\Services\Implementations\DiseaseHistoryService.cs" />
+    <Compile Include="Business\Services\Implementations\MedicineService.cs" />
     <Compile Include="Business\Services\Implementations\NetworkService.cs" />
     <Compile Include="Business\Services\Implementations\PreferencesService.cs" />
     <Compile Include="Business\Services\INetworkService.cs" />
@@ -107,8 +109,10 @@
     <Compile Include="Data\Api\ApiRouting.cs" />
     <Compile Include="Data\Api\APIs\IAuthRestApi.cs" />
     <Compile Include="Data\Api\APIs\IDiseaseHistoryRestApi.cs" />
+    <Compile Include="Data\Api\APIs\IMedicineRestApi.cs" />
     <Compile Include="Data\Api\APIs\Implementations\AuthRestApi.cs" />
     <Compile Include="Data\Api\APIs\Implementations\DiseaseHistoryRestApi.cs" />
+    <Compile Include="Data\Api\APIs\Implementations\MedicineRestApi.cs" />
     <Compile Include="Data\Api\Rest\IRequestInterceptor.cs" />
     <Compile Include="Data\Api\Rest\PostFormUrlEncodedRequestBuilder.cs" />
     <Compile Include="Data\Api\Rest\Request.cs" />
@@ -121,6 +125,7 @@
     <Compile Include="Data\Entities\DiseaseHistory\DiseaseHistoryListItemModel.cs" />
     <Compile Include="Data\Entities\DiseaseHistory\DiseaseHistoryListModel.cs" />
     <Compile Include="Data\Entities\Identity\AppUser.cs" />
+    <Compile Include="Data\Entities\Medicine\MedicineDetailsModel.cs" />
     <Compile Include="Data\Entities\Medicine\MedicineListItemViewModel.cs" />
     <Compile Include="Data\Entities\Medicine\MedicineListViewModel.cs" />
     <Compile Include="Data\Entities\Metric\MetricListItemViewModel.cs" />
@@ -137,17 +142,48 @@
     <Compile Include="Presentation\Models\Auth\UserInfoModel.cs" />
     <Compile Include="Presentation\Models\ResponseWrapper.cs" />
     <Compile Include="Presentation\Models\UserInfo\UserInfoDetailedModel.cs" />
+    <Compile Include="Presentation\ViewModels\DiseaseHistory\DiseaseHistoryDetailsViewModel.cs" />
+    <Compile Include="Presentation\ViewModels\DiseaseHistory\DiseaseHistoryListViewModel.cs" />
     <Compile Include="Presentation\ViewModels\LoginViewModel.cs" />
+    <Compile Include="Presentation\ViewModels\Medicine\MedicineDetailsViewModel.cs" />
+    <Compile Include="Presentation\ViewModels\Medicine\MedicineListViewModel.cs" />
     <Compile Include="Presentation\ViewModels\MenuContentViewModel.cs" />
     <Compile Include="Presentation\ViewModels\ViewModelBase.cs" />
     <Compile Include="Presentation\Views\LoginPage\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Views\MenuPage\DiseaseHistory\DiseaseHistoryDetailsControl.xaml.cs">
+      <DependentUpon>DiseaseHistoryDetailsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Views\MenuPage\DiseaseHistory\DiseaseHistoryListItemControl.xaml.cs">
+      <DependentUpon>DiseaseHistoryListItemControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Views\MenuPage\DiseaseHistory\DiseaseHistoryListPage.xaml.cs">
+      <DependentUpon>DiseaseHistoryListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Views\MenuPage\DiseaseHistory\DiseaseHistoryNotSelected.xaml.cs">
+      <DependentUpon>DiseaseHistoryNotSelected.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Views\MenuPage\FirstMainPage.xaml.cs">
       <DependentUpon>FirstMainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Views\MenuPage\Medicine\MedicineDetailsControl.xaml.cs">
+      <DependentUpon>MedicineDetailsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Views\MenuPage\Medicine\MedicineListItemControl.xaml.cs">
+      <DependentUpon>MedicineListItemControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Views\MenuPage\Medicine\MedicineListPage.xaml.cs">
+      <DependentUpon>MedicineListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Views\MenuPage\Medicine\MedicineNotSelected.xaml.cs">
+      <DependentUpon>MedicineNotSelected.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Views\MenuPage\MenuContentPage.xaml.cs">
       <DependentUpon>MenuContentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Views\MenuPage\Treatment\AddTreatmentPage.xaml.cs">
+      <DependentUpon>AddTreatmentPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Views\PreloaderContent.xaml.cs">
       <DependentUpon>PreloaderContent.xaml</DependentUpon>
@@ -161,8 +197,18 @@
     <None Include="SmartInfusion-UwpClient_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Assets\background.png" />
+    <Content Include="Assets\electronic.png" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\logo.png" />
+    <Content Include="Assets\mainback.jpg" />
+    <Content Include="Assets\medicine.png" />
+    <Content Include="Assets\medicineDetails.png" />
+    <Content Include="Assets\monitoring.png" />
+    <Content Include="Assets\patient.ico" />
+    <Content Include="Assets\patientDetails.png" />
+    <Content Include="Assets\speed.png" />
+    <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
     <Content Include="Assets\Square150x150Logo.scale-200.png" />
     <Content Include="Assets\Square44x44Logo.scale-200.png" />
@@ -179,13 +225,49 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Presentation\Views\MenuPage\DiseaseHistory\DiseaseHistoryDetailsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\Views\MenuPage\DiseaseHistory\DiseaseHistoryListItemControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\Views\MenuPage\DiseaseHistory\DiseaseHistoryListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\Views\MenuPage\DiseaseHistory\DiseaseHistoryNotSelected.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Presentation\Views\MenuPage\FirstMainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Presentation\Views\MenuPage\Medicine\MedicineDetailsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\Views\MenuPage\Medicine\MedicineListItemControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\Views\MenuPage\Medicine\MedicineListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\Views\MenuPage\Medicine\MedicineNotSelected.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Presentation\Views\MenuPage\MenuContentPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\Views\MenuPage\Treatment\AddTreatmentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Presentation\Views\PreloaderContent.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -218,9 +300,7 @@
       <Version>7.4.0</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Presentation\Views\MenuPage\DiseaseHistory\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
