@@ -189,7 +189,7 @@
 
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Margin="10"                                        
+                            <StackPanel Margin="10"
                                         Padding="10"
                                         Background="LightGray"
                                         CornerRadius="10"
@@ -243,14 +243,10 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-
-
-
-
             </StackPanel>
             
         </ScrollViewer>
-        
+
         <controls:Loading x:Name="Preloader" IsLoading="{Binding IsBusy}"
                               HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
                               HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"

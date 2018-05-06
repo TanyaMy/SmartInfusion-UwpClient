@@ -1,22 +1,23 @@
-﻿<UserControl
-    x:Class="SmartInfusion_UwpClient.Presentation.Views.MenuPage.Medicine.MedicineDetailsControl"
+﻿<Page
+    x:Class="SmartInfusion_UwpClient.Presentation.Views.MenuPage.Medicine.AddMedicinePage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:SmartInfusion_UwpClient.Presentation.Views.MenuPage.Medicine"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     xmlns:views="using:SmartInfusion_UwpClient.Presentation.Views"
-    mc:Ignorable="d"
-    d:DesignHeight="300"
-    d:DesignWidth="400">
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    mc:Ignorable="d">
 
     <Grid Background="#F1F1FA">
         <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="2*"></RowDefinition>
-            <RowDefinition Height="3*"></RowDefinition>
             <RowDefinition Height="4*"></RowDefinition>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Row="0"
                        HorizontalAlignment="Center"
@@ -25,7 +26,7 @@
                    Padding="30, 20, 30, 0"
                    FontSize="32"
                    Foreground="CadetBlue"> 
-                    Medicine Details
+                    Add medicine
             </TextBlock>
         </StackPanel>
 
@@ -34,7 +35,7 @@
                        VerticalAlignment="Center">
             <controls:ImageEx x:Name="MedicineImage"
                           Width="150" Height="300" Padding="10"
-                          Source="Assets/medicineDetails.png">
+                          Source="Assets/addMedicine.png">
             </controls:ImageEx>
         </StackPanel>
 
@@ -44,7 +45,6 @@
                       HorizontalScrollBarVisibility="Auto" 
                       VerticalScrollBarVisibility="Hidden">
 
-
             <StackPanel  Padding="20"
                             Margin="20"
                             Background="AliceBlue"
@@ -52,24 +52,37 @@
                             BorderThickness="1"
                             BorderBrush="Aquamarine">
 
-                <StackPanel Orientation="Horizontal" Padding="10">
-                    <TextBlock FontSize="18"
+                <TextBlock FontSize="18"
                                    FontWeight="Bold"
-                                   Padding="0,0,5,0">Title:</TextBlock>
-                    <TextBlock Text="{Binding Details.Title}"
+                                    Margin="20, 10">Title:</TextBlock>
+                <TextBox x:Name="MedicineTitle"
                                    FontSize="18"
-                                   FontStyle="Italic"></TextBlock>
-                </StackPanel>
+                                   Margin="20, 10"
+                                   FontStyle="Italic"></TextBox>
 
-                <StackPanel Orientation="Horizontal" Padding="10">
-                    <TextBlock FontSize="18"
+
+                <TextBlock FontSize="18"
                                    FontWeight="Bold"
-                                   Padding="0,0,5,0">Description:</TextBlock>
-                    <TextBlock Text="{Binding Details.Description}"
+                           Margin="20, 30, 20, 10">Description:</TextBlock>
+                <TextBox x:Name="MedicineDesc"
+                          Margin="20, 10"
+                          TextWrapping="Wrap"
+                          AcceptsReturn="True"
+                         Grid.Row="2"
                                    FontSize="18"
-                                   TextWrapping="Wrap"
-                                   FontStyle="Italic"></TextBlock>
-                </StackPanel>
+                                  FontStyle="Italic"></TextBox>
+
+
+                <Button x:Name="addMedicinebtn"
+                        HorizontalAlignment="Center"
+                           Margin="20, 30"
+                        Width="150"
+                       Padding="10"
+                        FontSize="24"
+                        Background="CadetBlue"
+                            Click="addMedicinebtn_Click">
+                    Save
+                </Button>
             </StackPanel>
         </ScrollViewer>
 
@@ -80,4 +93,6 @@
             <views:PreloaderContent></views:PreloaderContent>
         </controls:Loading>
     </Grid>
-</UserControl>
+
+
+</Page>

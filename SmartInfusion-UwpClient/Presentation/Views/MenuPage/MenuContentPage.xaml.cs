@@ -3,6 +3,8 @@ using Windows.UI.Xaml;
 using Autofac;
 using ReactiveUI;
 using SmartInfusion_UwpClient.Presentation.ViewModels;
+using Windows.UI.Xaml.Navigation;
+using SmartInfusion_UwpClient.Presentation.Views.MenuPage.Medicine;
 
 namespace SmartInfusion_UwpClient.Presentation.Views.MenuPage
 {
@@ -36,6 +38,14 @@ namespace SmartInfusion_UwpClient.Presentation.Views.MenuPage
         {
             get => ViewModel;
             set => ViewModel = (MenuContentViewModel)value;
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            if (e.Parameter != null && e.Parameter.ToString() == "MedicineListPage")
+            {
+                ViewModel.CurrentPage = typeof(MedicineListPage);
+            }
         }
 
         public MenuContentViewModel ViewModel

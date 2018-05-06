@@ -23,5 +23,10 @@ namespace SmartInfusion_UwpClient.Business.Services.Implementations
         {
             return await _requestRestApi.GetMedicineListAsync();
         }
+
+        public async Task<ResponseWrapper> AddMedicine(MedicineDetailsModel medicine)
+        {
+            return await _requestRestApi.AddMedicine(medicine);
+        }
     }
 }

@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace SmartInfusion_UwpClient.Presentation.ViewModels.DiseaseHistory
 {
-    public class MedicineDetailsViewModel : ViewModelBase
+    public class DiseaseHistoryDetailsViewModel : ViewModelBase
     {
         private readonly IDiseaseHistoryService _diseaseHistoryService;
 
         private readonly DiseaseHistoryListItemModel _listItem;
         private DiseaseHistoryDetailsModel _detailsModel;
 
-        public MedicineDetailsViewModel(object diseaseHistoryListItem)
+        public DiseaseHistoryDetailsViewModel(object diseaseHistoryListItem)
         {
             _listItem = diseaseHistoryListItem as DiseaseHistoryListItemModel;
             _diseaseHistoryService = App.Container.Resolve<IDiseaseHistoryService>();

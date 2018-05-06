@@ -148,6 +148,7 @@
     <Compile Include="Presentation\ViewModels\Medicine\MedicineDetailsViewModel.cs" />
     <Compile Include="Presentation\ViewModels\Medicine\MedicineListViewModel.cs" />
     <Compile Include="Presentation\ViewModels\MenuContentViewModel.cs" />
+    <Compile Include="Presentation\ViewModels\Medicine\AddMedicineViewModel.cs" />
     <Compile Include="Presentation\ViewModels\ViewModelBase.cs" />
     <Compile Include="Presentation\Views\LoginPage\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
@@ -167,6 +168,9 @@
     <Compile Include="Presentation\Views\MenuPage\FirstMainPage.xaml.cs">
       <DependentUpon>FirstMainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Views\MenuPage\Medicine\AddMedicinePage.xaml.cs">
+      <DependentUpon>AddMedicinePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Views\MenuPage\Medicine\MedicineDetailsControl.xaml.cs">
       <DependentUpon>MedicineDetailsControl.xaml</DependentUpon>
     </Compile>
@@ -182,9 +186,6 @@
     <Compile Include="Presentation\Views\MenuPage\MenuContentPage.xaml.cs">
       <DependentUpon>MenuContentPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Views\MenuPage\Treatment\AddTreatmentPage.xaml.cs">
-      <DependentUpon>AddTreatmentPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\Views\PreloaderContent.xaml.cs">
       <DependentUpon>PreloaderContent.xaml</DependentUpon>
     </Compile>
@@ -197,6 +198,7 @@
     <None Include="SmartInfusion-UwpClient_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\addMedicine.png" />
     <Content Include="Assets\background.png" />
     <Content Include="Assets\electronic.png" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
@@ -245,6 +247,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Presentation\Views\MenuPage\Medicine\AddMedicinePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Presentation\Views\MenuPage\Medicine\MedicineDetailsControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -264,10 +270,6 @@
     <Page Include="Presentation\Views\MenuPage\MenuContentPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Presentation\Views\MenuPage\Treatment\AddTreatmentPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Presentation\Views\PreloaderContent.xaml">
       <Generator>MSBuild:Compile</Generator>

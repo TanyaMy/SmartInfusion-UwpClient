@@ -9,5 +9,7 @@ namespace SmartInfusion_UwpClient.Business.Services
         Task<ResponseWrapper<MedicineListViewModel>> GetMedicineListAsync();
 
         Task<ResponseWrapper<MedicineDetailsModel>> GetMedicineDetailsAsync(int medicineId);
+
+        Task<ResponseWrapper> AddMedicine(MedicineDetailsModel medicine);
     }
 }

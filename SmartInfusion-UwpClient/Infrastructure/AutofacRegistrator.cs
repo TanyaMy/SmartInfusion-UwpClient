@@ -24,6 +24,7 @@ namespace SmartInfusion_UwpClient.Infrastructure
             builder.RegisterType<LoginViewModel>().AsSelf().AsImplementedInterfaces();
             builder.RegisterType<MedicineListViewModel>().AsSelf().AsImplementedInterfaces();
             builder.RegisterType<DiseaseHistoryListViewModel>().AsSelf().AsImplementedInterfaces();
+            builder.RegisterType<AddMedicineViewModel>().AsSelf().AsImplementedInterfaces();
         }
 
         private static void RegisterServices(ContainerBuilder builder)

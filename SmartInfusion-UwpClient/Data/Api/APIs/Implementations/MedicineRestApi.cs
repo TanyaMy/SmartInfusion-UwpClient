@@ -27,5 +27,14 @@ namespace SmartInfusion_UwpClient.Data.Api.APIs.Implementations
                                 .GetAsync<ResponseWrapper<MedicineListViewModel>>();
             return response;
         }
+
+        public Task<ResponseWrapper> AddMedicine(MedicineDetailsModel medicine)
+        {
+            return Url("medicine/addMedicine")
+                                .FormUrlEncoded()
+                                .Param(nameof(medicine.Title), medicine.Title)
+                                .Param(nameof(medicine.Description), medicine.Description)
+                                .PostAsync<ResponseWrapper>();
+        }
     }
 }

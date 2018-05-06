@@ -25,7 +25,7 @@ namespace SmartInfusion_UwpClient.Presentation.ViewModels.DiseaseHistory
             await LoadDiseaseHistoryListAsync();
         }
 
-        public Func<object, object> MapListItemToDetails => x => new MedicineDetailsViewModel(x);
+        public Func<object, object> MapListItemToDetails => x => new DiseaseHistoryDetailsViewModel(x);
 
         public DiseaseHistoryListItemModel SelectedItem
         {
@@ -51,7 +51,7 @@ namespace SmartInfusion_UwpClient.Presentation.ViewModels.DiseaseHistory
                 if (!diseaseHistoryResponse.IsValid)
                 {
                     await ShowErrorAsync(string.IsNullOrEmpty(diseaseHistoryResponse.ErrorMessage)
-                        ? "Load Donor Request List Failed."
+                        ? "Load Disease History List Failed."
                         : diseaseHistoryResponse.ErrorMessage);
                     return;
                 }

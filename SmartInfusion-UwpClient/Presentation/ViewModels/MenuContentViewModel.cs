@@ -94,6 +94,16 @@ namespace SmartInfusion_UwpClient.Presentation.ViewModels
                 });
             };
 
+            if (userRole == RolesConstants.Administrator)
+            {
+                MenuItems.Add(new MenuItemViewModel
+                {
+                    Icon = "\xECC8",
+                    DisplayName = "Add medicines",
+                    PageType = typeof(AddMedicinePage)
+                });
+            };
+
             if (userRole == RolesConstants.Doctor 
                 || userRole == RolesConstants.Nurse)
             {
