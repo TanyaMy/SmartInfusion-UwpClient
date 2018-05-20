@@ -24,8 +24,8 @@
             <TextBlock HorizontalAlignment="Center"
                    Padding="30, 50, 30, 0"
                    FontSize="32"
-                   Foreground="CadetBlue"> 
-                    Disease History Details
+                   Foreground="CadetBlue"
+                   x:Uid="diseaseHistoryDetails">                     
             </TextBlock>
         </RelativePanel>
 
@@ -58,13 +58,15 @@
                                    HorizontalAlignment="Center"
                                    FontWeight="Bold"
                                    Foreground="DarkBlue"
-                                   Padding="0,0,5,0">Patient Information</TextBlock>
+                                   Padding="0,0,5,0"
+                                   x:Uid="patientInfo"></TextBlock>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" Padding="10">
                         <TextBlock FontSize="18"
                                    FontWeight="Bold"
-                                   Padding="0,0,5,0">Patient:</TextBlock>
+                                   Padding="0,0,5,0"
+                                   x:Uid="patient"></TextBlock>
                         <TextBlock Text="{Binding Details.PatientInfo.FullName}"
                                    FontSize="18"
                                    FontStyle="Italic"></TextBlock>
@@ -73,7 +75,8 @@
                     <StackPanel Orientation="Horizontal" Padding="10">
                         <TextBlock FontSize="18"
                                    FontWeight="Bold"
-                                   Padding="0,0,5,0">Email:</TextBlock>
+                                   Padding="0,0,5,0"
+                                   x:Uid="email"></TextBlock>
                         <TextBlock Text="{Binding Details.PatientInfo.Email}"
                                    FontSize="18"
                                    FontStyle="Italic"></TextBlock>
@@ -82,7 +85,8 @@
                     <StackPanel Orientation="Horizontal" Padding="10">
                         <TextBlock FontSize="18"
                                    FontWeight="Bold"
-                                   Padding="0,0,5,0">Phone Number:</TextBlock>
+                                   Padding="0,0,5,0"
+                                   x:Uid="phone"></TextBlock>
                         <TextBlock Text="{Binding Details.PatientInfo.PhoneNumber}"
                                    FontSize="18"
                                    FontStyle="Italic"></TextBlock>
@@ -91,7 +95,8 @@
                     <StackPanel Orientation="Horizontal" Padding="10">
                         <TextBlock FontSize="18"
                                    FontWeight="Bold"
-                                   Padding="0,0,5,0">Country:</TextBlock>
+                                   Padding="0,0,5,0"
+                                   x:Uid="country"></TextBlock>
                         <TextBlock Text="{Binding Details.PatientInfo.Country}"
                                    FontSize="18"
                                    FontStyle="Italic"></TextBlock>
@@ -100,7 +105,8 @@
                     <StackPanel Orientation="Horizontal" Padding="10">
                         <TextBlock FontSize="18"
                                    FontWeight="Bold"
-                                   Padding="0,0,5,0">City:</TextBlock>
+                                   Padding="0,0,5,0"
+                                   x:Uid="city"></TextBlock>
                         <TextBlock Text="{Binding Details.PatientInfo.City}"
                                    FontSize="18"
                                    FontStyle="Italic"></TextBlock>
@@ -109,7 +115,8 @@
                     <StackPanel Orientation="Horizontal" Padding="10">
                         <TextBlock FontSize="18"
                                    FontWeight="Bold"
-                                   Padding="0,0,5,0">Address:</TextBlock>
+                                   Padding="0,0,5,0"
+                                   x:Uid="address"></TextBlock>
                         <TextBlock Text="{Binding Details.PatientInfo.AddressLine1}"
                                    FontSize="18"
                                    FontStyle="Italic"></TextBlock>
@@ -118,7 +125,8 @@
                     <StackPanel Orientation="Horizontal" Padding="10">
                         <TextBlock FontSize="18"
                                    FontWeight="Bold"
-                                   Padding="0,0,5,0">Weight:</TextBlock>
+                                   Padding="0,0,5,0"
+                                   x:Uid="weight"></TextBlock>
                         <TextBlock Text="{Binding Details.PatientInfo.Weight}"
                                    FontSize="18"
                                    FontStyle="Italic"></TextBlock>
@@ -127,7 +135,8 @@
                     <StackPanel Orientation="Horizontal" Padding="10">
                         <TextBlock FontSize="18"
                                    FontWeight="Bold"
-                                   Padding="0,0,5,0">Message:</TextBlock>
+                                   Padding="0,0,5,0"
+                                   x:Uid="message"></TextBlock>
                         <TextBlock Text="{Binding Details.Message}"
                                    FontSize="18"
                                    FontStyle="Italic"></TextBlock>
@@ -138,8 +147,8 @@
                            FontSize="24"
                            FontWeight="Bold"
                            Foreground="Green"
-                           Margin="10">
-                    Patient Metrics
+                           Margin="10"
+                           x:Uid="patientMetrics">                    
                 </TextBlock>                
                 <ListView ItemsSource="{Binding Details.Metrics}" 
                           SelectionMode="Single"
@@ -161,10 +170,11 @@
                                     <TextBlock FontSize="16"
                                    Padding="0,0,5,0" Text="{Binding Value}"/>                                   
                                 </StackPanel>
-                                <StackPanel Orientation="Horizontal">                                  
+                                <StackPanel Orientation="Horizontal">
                                     <TextBlock FontSize="16"
                                        FontWeight="Bold"
-                                       Padding="0,0,5,0">Created:</TextBlock>
+                                       Padding="0,0,5,0"
+                                       x:Uid="created"></TextBlock>
                                     <TextBlock FontSize="16"
                                        Padding="0,0,5,0"
                                        Text="{Binding Created.Date}"/>
@@ -179,8 +189,8 @@
                            FontSize="24"
                            FontWeight="Bold"
                            Foreground="DarkRed"
-                           Margin="10">
-                    Patient Treatments
+                           Margin="10"
+                           x:Uid="patientTreatments">                    
                 </TextBlock>
                 <ListView ItemsSource="{Binding Details.Treatments}" 
                           SelectionMode="Single"
@@ -198,42 +208,48 @@
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock FontSize="16"
                                    FontWeight="Bold"
-                                   Padding="0,0,5,0">Medicine:</TextBlock>
+                                   Padding="0,0,5,0"
+                                    x:Uid="medicine"></TextBlock>
                                     <TextBlock FontSize="16"
                                    Padding="0,0,5,0" Text="{Binding MedicineTitle}"/>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock FontSize="16"
                                    FontWeight="Bold"
-                                   Padding="0,0,5,0">Diagnosis:</TextBlock>
+                                   Padding="0,0,5,0"
+                                    x:Uid="diagnosis"></TextBlock>
                                     <TextBlock FontSize="16"
                                    Padding="0,0,5,0" Text="{Binding Diagnosis}"/>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock FontSize="16"
                                    FontWeight="Bold"
-                                   Padding="0,0,5,0">Medicine Weight:</TextBlock>
+                                   Padding="0,0,5,0"
+                                    x:Uid="medicineWeight"></TextBlock>
                                     <TextBlock FontSize="16"
                                    Padding="0,0,5,0" Text="{Binding MedicineWeight}"/>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock FontSize="16"
                                    FontWeight="Bold"
-                                   Padding="0,0,5,0">Solution Volume:</TextBlock>
+                                   Padding="0,0,5,0"
+                                    x:Uid="solutionVolume"></TextBlock>
                                     <TextBlock FontSize="16"
                                    Padding="0,0,5,0" Text="{Binding SolutionVolume}"/>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock FontSize="16"
                                    FontWeight="Bold"
-                                   Padding="0,0,5,0">Dosage:</TextBlock>
+                                   Padding="0,0,5,0"
+                                    x:Uid="dosage"></TextBlock>
                                     <TextBlock FontSize="16"
                                    Padding="0,0,5,0" Text="{Binding Dosage}"/>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock FontSize="16"
                                    FontWeight="Bold"
-                                   Padding="0,0,5,0">Completed:</TextBlock>
+                                   Padding="0,0,5,0"
+                                    x:Uid="completed"></TextBlock>
                                     <FontIcon FontFamily="Segoe MDL2 Assets" 
                                         Glyph="{Binding CompletedIcon}"
                                         FontSize="24" 

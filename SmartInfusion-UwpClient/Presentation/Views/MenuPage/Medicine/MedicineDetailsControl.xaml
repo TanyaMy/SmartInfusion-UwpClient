@@ -24,8 +24,8 @@
             <TextBlock HorizontalAlignment="Center"
                    Padding="30, 20, 30, 0"
                    FontSize="32"
-                   Foreground="CadetBlue"> 
-                    Medicine Details
+                   Foreground="CadetBlue"
+                   x:Uid="medicineDetails"> 
             </TextBlock>
         </StackPanel>
 
@@ -55,7 +55,8 @@
                 <StackPanel Orientation="Horizontal" Padding="10">
                     <TextBlock FontSize="18"
                                    FontWeight="Bold"
-                                   Padding="0,0,5,0">Title:</TextBlock>
+                                   Padding="0,0,5,0"
+                                   x:Uid="medicineTitle"></TextBlock>
                     <TextBlock Text="{Binding Details.Title}"
                                    FontSize="18"
                                    FontStyle="Italic"></TextBlock>
@@ -64,7 +65,8 @@
                 <StackPanel Orientation="Horizontal" Padding="10">
                     <TextBlock FontSize="18"
                                    FontWeight="Bold"
-                                   Padding="0,0,5,0">Description:</TextBlock>
+                                   Padding="0,0,5,0"
+                                   x:Uid="medicineDescription"></TextBlock>
                     <TextBlock Text="{Binding Details.Description}"
                                    FontSize="18"
                                    TextWrapping="Wrap"

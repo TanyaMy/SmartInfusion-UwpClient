@@ -2,7 +2,6 @@
     x:Class="SmartInfusion_UwpClient.Presentation.Views.MenuPage.FirstMainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:SmartInfusion_UwpClient.Presentation.Views.MenuPage"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
@@ -97,8 +96,9 @@
                        FontSize="20"
                        TextAlignment="Center"
                        TextWrapping="Wrap"
-                       Padding="10">
-                <Bold>High accuracy of injection speed</Bold>
+                       Padding="10"
+                       FontWeight="Bold"
+                       x:Uid="homeAccuracyTxt">
             </TextBlock>
         </RelativePanel>
 
@@ -112,8 +112,9 @@
                        FontSize="20"
                        TextAlignment="Center"
                        TextWrapping="Wrap"
-                       Padding="10">
-                <Bold>Electronic record keeping</Bold>
+                       Padding="10"
+                       FontWeight="Bold"
+                       x:Uid="homeElectronicTxt">
             </TextBlock>
         </RelativePanel>
 
@@ -127,8 +128,9 @@
                        FontSize="20"
                        TextAlignment="Center"
                        TextWrapping="Wrap"
-                       Padding="10">
-                <Bold>Monitoring the patient's treatment</Bold>
+                       Padding="10"
+                       FontWeight="Bold"
+                       x:Uid="homeMonitoringTxt">
             </TextBlock>
         </RelativePanel>
     </Grid>

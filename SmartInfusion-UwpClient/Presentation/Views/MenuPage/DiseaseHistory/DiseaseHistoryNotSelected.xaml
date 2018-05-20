@@ -13,8 +13,8 @@
         <TextBlock HorizontalAlignment="Center"
                    Padding="50"
                    FontSize="32"
-                   Foreground="Bisque"> 
-            At first, please select disease history.
+                   Foreground="Bisque"
+                   x:Uid="diseaseHistoryNotSelected">            
         </TextBlock>
     </Grid>
 </UserControl>

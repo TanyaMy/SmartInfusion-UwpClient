@@ -16,7 +16,7 @@
             <Grid Margin="0,0,8,0">
                 <ProgressRing IsActive="True" Foreground="Blue" />
             </Grid>
-            <TextBlock Text="Loading" 
+            <TextBlock x:Uid="loading"
                        Foreground="Black"
                        FontSize="24"
                        FontWeight="Bold"/>

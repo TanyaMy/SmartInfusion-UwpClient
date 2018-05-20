@@ -9,6 +9,9 @@ using SmartInfusion_UwpClient.Presentation.Views.MenuPage;
 using SmartInfusion_UwpClient.Presentation.Constants;
 using SmartInfusion_UwpClient.Presentation.Views.MenuPage.DiseaseHistory;
 using SmartInfusion_UwpClient.Presentation.Views.MenuPage.Medicine;
+using System.Resources;
+using System.Reflection;
+using Windows.ApplicationModel.Resources;
 
 namespace SmartInfusion_UwpClient.Presentation.ViewModels
 {
@@ -19,10 +22,13 @@ namespace SmartInfusion_UwpClient.Presentation.ViewModels
         private bool _isPaneOpened;
         private MenuItemViewModel _selectedMenuItem;
         private Type _currentPage;
+        ResourceLoader _resourceLoader;
 
         public MenuContentViewModel(IPreferencesService preferencesService)
         {
             _preferencesService = preferencesService;
+
+            _resourceLoader = ResourceLoader.GetForCurrentView();
 
             OpenClosePaneCommand = ReactiveCommand.Create(OpenClosePaneCommandExecuted);
 
@@ -77,7 +83,7 @@ namespace SmartInfusion_UwpClient.Presentation.ViewModels
 
             MenuItems.Add(new MenuItemViewModel
             {
-                DisplayName = "Home",
+                DisplayName = _resourceLoader.GetString("Home"),
                 Icon = "\xE80F",
                 PageType = typeof(FirstMainPage)
             });
@@ -89,7 +95,7 @@ namespace SmartInfusion_UwpClient.Presentation.ViewModels
                 MenuItems.Add(new MenuItemViewModel
                 {
                     Icon = "\xEE94",
-                    DisplayName = "Medicines",
+                    DisplayName = _resourceLoader.GetString("Medicines"),
                     PageType = typeof(MedicineListPage)
                 });
             };
@@ -99,18 +105,18 @@ namespace SmartInfusion_UwpClient.Presentation.ViewModels
                 MenuItems.Add(new MenuItemViewModel
                 {
                     Icon = "\xECC8",
-                    DisplayName = "Add medicines",
+                    DisplayName = _resourceLoader.GetString("AddMedicines"),
                     PageType = typeof(AddMedicinePage)
                 });
             };
 
-            if (userRole == RolesConstants.Doctor 
+            if (userRole == RolesConstants.Doctor
                 || userRole == RolesConstants.Nurse)
             {
                 MenuItems.Add(new MenuItemViewModel
                 {
                     Icon = "\xE779",
-                    DisplayName = "Disease Histories",
+                    DisplayName = _resourceLoader.GetString("DiseaseHistories"),
                     PageType = typeof(DiseaseHistoryListPage)
                 });
             }
@@ -118,7 +124,7 @@ namespace SmartInfusion_UwpClient.Presentation.ViewModels
             {
                 MenuItems.Add(new MenuItemViewModel
                 {
-                    DisplayName = "My Disease Histories",
+                    DisplayName = _resourceLoader.GetString("MyDiseaseHistories"),
                     Icon = "\xE133",
                     PageType = typeof(DiseaseHistoryListPage)
                 });
@@ -126,7 +132,7 @@ namespace SmartInfusion_UwpClient.Presentation.ViewModels
 
             MenuItems.Add(new MenuItemViewModel
             {
-                DisplayName = "Logout",
+                DisplayName = _resourceLoader.GetString("Logout"),
                 Icon = "\xE8F8",
                 PageType = typeof(LoginPage)
             });

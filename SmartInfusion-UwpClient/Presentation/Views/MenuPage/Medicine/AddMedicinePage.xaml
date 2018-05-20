@@ -25,8 +25,9 @@
             <TextBlock HorizontalAlignment="Center"
                    Padding="30, 20, 30, 0"
                    FontSize="32"
-                   Foreground="CadetBlue"> 
-                    Add medicine
+                   Foreground="CadetBlue"
+                       x:Uid="addMedicine"> 
+                   
             </TextBlock>
         </StackPanel>
 
@@ -54,7 +55,8 @@
 
                 <TextBlock FontSize="18"
                                    FontWeight="Bold"
-                                    Margin="20, 10">Title:</TextBlock>
+                                    Margin="20, 10"
+                           x:Uid="medicineTitle"></TextBlock>
                 <TextBox x:Name="MedicineTitle"
                                    FontSize="18"
                                    Margin="20, 10"
@@ -63,7 +65,8 @@
 
                 <TextBlock FontSize="18"
                                    FontWeight="Bold"
-                           Margin="20, 30, 20, 10">Description:</TextBlock>
+                           Margin="20, 30, 20, 10"
+                           x:Uid="medicineDescription"></TextBlock>
                 <TextBox x:Name="MedicineDesc"
                           Margin="20, 10"
                           TextWrapping="Wrap"
@@ -80,8 +83,8 @@
                        Padding="10"
                         FontSize="24"
                         Background="CadetBlue"
-                            Click="addMedicinebtn_Click">
-                    Save
+                            Click="addMedicinebtn_Click"
+                        x:Uid="addMedicineBtn">
                 </Button>
             </StackPanel>
         </ScrollViewer>
