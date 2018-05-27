@@ -45,7 +45,8 @@ namespace SmartInfusion_UwpClient
         /// <param name="e">Details about the launch request and process.</param>
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
-            ApplicationLanguages.PrimaryLanguageOverride = "en-US";
+            //ApplicationLanguages.PrimaryLanguageOverride = "en-US";
+            ApplicationLanguages.PrimaryLanguageOverride = "uk";
 
             Frame rootFrame = Window.Current.Content as Frame;
 

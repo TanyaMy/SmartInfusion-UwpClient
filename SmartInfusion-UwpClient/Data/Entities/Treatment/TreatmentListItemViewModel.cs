@@ -12,9 +12,7 @@ namespace SmartInfusion_UwpClient.Data.Entities.Treatment
         public string MedicineTitle { get; set; }
 
         public string Diagnosis { get; set; }
-
-        public double MedicineWeight { get; set; }
-
+        
         public double SolutionVolume { get; set; }
 
         public double Dosage { get; set; }

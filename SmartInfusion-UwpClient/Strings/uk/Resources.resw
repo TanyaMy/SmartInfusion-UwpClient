@@ -118,43 +118,43 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="addMedicine.Text" xml:space="preserve">
-    <value>Добавить препарат</value>
+    <value>Додати препарат</value>
   </data>
   <data name="addMedicineBtn.Content" xml:space="preserve">
-    <value>Сохранить</value>
+    <value>Зберегти</value>
   </data>
   <data name="AddMedicines" xml:space="preserve">
-    <value>Добавить препараты</value>
+    <value>Додати препарати</value>
   </data>
   <data name="address.Text" xml:space="preserve">
-    <value>Адрес:</value>
+    <value>Адреса:</value>
   </data>
   <data name="city.Text" xml:space="preserve">
-    <value>Город:</value>
+    <value>Місто:</value>
   </data>
   <data name="completed.Text" xml:space="preserve">
-    <value>Выполнено:</value>
+    <value>Виконано:</value>
   </data>
   <data name="country.Text" xml:space="preserve">
-    <value>Страна:</value>
+    <value>Країна:</value>
   </data>
   <data name="created.Text" xml:space="preserve">
-    <value>Создано:</value>
+    <value>Створено:</value>
   </data>
   <data name="diagnosis.Text" xml:space="preserve">
-    <value>Диагноз:</value>
+    <value>Діагноз:</value>
   </data>
   <data name="DiseaseHistories" xml:space="preserve">
-    <value>Истории болезни</value>
+    <value>Історії хвороби</value>
   </data>
   <data name="diseaseHistoryDetails.Text" xml:space="preserve">
-    <value>Детали истории болезни</value>
+    <value>Деталі історій хвороби</value>
   </data>
   <data name="diseaseHistoryNotSelected.Text" xml:space="preserve">
-    <value>Вначале выберите, пожалуйста, историю болезни.</value>
+    <value>Спочатку, оберіть, будь ласка, історію хвороби.</value>
   </data>
   <data name="dosage.Text" xml:space="preserve">
-    <value>Дозировка:</value>
+    <value>Дозування:</value>
   </data>
   <data name="email.Text" xml:space="preserve">
     <value>Email:</value>
@@ -163,75 +163,75 @@
     <value>Email</value>
   </data>
   <data name="Home" xml:space="preserve">
-    <value>Домой</value>
+    <value>На домашню</value>
   </data>
   <data name="homeAccuracyTxt.Text" xml:space="preserve">
-    <value>Высокая точность скорости инъекций</value>
+    <value>Висока точність ін'єкцій</value>
   </data>
   <data name="homeElectronicTxt.Text" xml:space="preserve">
-    <value>Электронный документооборот</value>
+    <value>Електронний документообіг</value>
   </data>
   <data name="homeMonitoringTxt.Text" xml:space="preserve">
-    <value>Мониторинг лечения пациента</value>
+    <value>Моніторінг лікування пацієнта</value>
   </data>
   <data name="loading.Text" xml:space="preserve">
-    <value>Завантаження...</value>
+    <value>Загрузка...</value>
   </data>
   <data name="Logout" xml:space="preserve">
-    <value>Выйти</value>
+    <value>Вийти</value>
   </data>
   <data name="medicine.Text" xml:space="preserve">
     <value>Препарат:</value>
   </data>
   <data name="medicineDescription.Text" xml:space="preserve">
-    <value>Описание:</value>
+    <value>Опис:</value>
   </data>
   <data name="medicineDetails.Text" xml:space="preserve">
-    <value>Детали препарата</value>
+    <value>Деталі препарата</value>
   </data>
   <data name="medicineNotSelected.Text" xml:space="preserve">
-    <value>Вначале выберите, пожалуйста, препарат.</value>
+    <value>Спочатку, оберіть, будь ласка, препарат.</value>
   </data>
   <data name="Medicines" xml:space="preserve">
-    <value>Препараты</value>
+    <value>Препарати</value>
   </data>
   <data name="medicineTitle.Text" xml:space="preserve">
-    <value>Название:</value>
+    <value>Назва:</value>
   </data>
   <data name="message.Text" xml:space="preserve">
-    <value>Доп. сведения:</value>
+    <value>Додаткові відомості:</value>
   </data>
   <data name="MyDiseaseHistories" xml:space="preserve">
-    <value>Мои истории болезни</value>
+    <value>Мої історії хвороби</value>
   </data>
   <data name="passwordTxtBox.Header" xml:space="preserve">
     <value>Пароль</value>
   </data>
   <data name="patient.Text" xml:space="preserve">
-    <value>Пациент:</value>
+    <value>Пацієнт:</value>
   </data>
   <data name="patientInfo.Text" xml:space="preserve">
-    <value>Информация о пациенте</value>
+    <value>Інформація про пацієнта</value>
   </data>
   <data name="patientMetrics.Text" xml:space="preserve">
     <value>Метрики</value>
   </data>
   <data name="patientTreatments.Text" xml:space="preserve">
-    <value>Назначения</value>
+    <value>Призначення</value>
   </data>
   <data name="phone.Text" xml:space="preserve">
     <value>Телефон:</value>
   </data>
   <data name="rememberMe.Text" xml:space="preserve">
-    <value>Запонить меня</value>
+    <value>Запам'ятати мене</value>
   </data>
   <data name="signInButton.Content" xml:space="preserve">
-    <value>Войти</value>
+    <value>Війти</value>
   </data>
   <data name="solutionVolume.Text" xml:space="preserve">
-    <value>Объем раствора:</value>
+    <value>Об'єм розчину:</value>
   </data>
   <data name="weight.Text" xml:space="preserve">
-    <value>Вес:</value>
+    <value>Вага:</value>
   </data>
 </root>
